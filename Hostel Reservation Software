@@ -1,0 +1,22 @@
+hostels = [
+    {"name": "Hostel A", "location": "City X", "price_per_night": 20},
+    {"name": "Hostel B", "location": "City Y", "price_per_night": 25},
+    {"name": "Hostel C", "location": "City X", "price_per_night": 18},
+    {"name": "Hostel D", "location": "City Z", "price_per_night": 30},
+]
+
+def search_hostels(location):
+    search_results = [hostel for hostel in hostels if hostel["location"] == location]
+    return search_results
+
+location = input("Enter the location to search for hostels: ")
+results = search_hostels(location)
+
+if results:
+    print("Hostels found in", location + ":")
+    for hostel in results:
+        print("Name:", hostel["name"])
+        print("Price per night:", hostel["price_per_night"])
+        print("---------------------")
+else:
+    print("No hostels found in", location)
